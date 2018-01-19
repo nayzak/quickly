@@ -2,7 +2,7 @@
 //  Quickly
 //
 
-protocol IQViewController : class {
+public protocol IQViewController : class {
 
     func setup()
 

@@ -2,7 +2,7 @@
 //  Quickly
 //
 
-protocol IQContentViewController : IQViewController {
+public protocol IQContentViewController : IQViewController {
 
     #if os(iOS)
     
