@@ -181,11 +181,13 @@ public class QApiQuery<
     }
 
     private func parse() {
-        guard let response: URLResponse = self.receivedResponse, let data: Data = self.receivedData else {
-            return
+        defer {
+            self.completeIfNeeded()
         }
-        self.response.parse(response: response, data: data)
-        self.completeIfNeeded()
+        
+        if let response: URLResponse = self.receivedResponse, let data: Data = self.receivedData {
+            self.response.parse(response: response, data: data)
+        }
     }
 
     private func parse(error: Error) {
