@@ -9,7 +9,7 @@
 
     public protocol IQCollectionCell: IQCollectionReuse {
 
-        weak var collectionDelegate: CollectionCellDelegate? { set get }
+        var collectionDelegate: CollectionCellDelegate? { set get }
 
         static func register(collectionView: UICollectionView)
 

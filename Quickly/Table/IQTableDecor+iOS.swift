@@ -9,7 +9,7 @@
 
     public protocol IQTableDecor: IQTableReuse {
 
-        weak var tableDelegate: IQTableDecorDelegate? { set get }
+        var tableDelegate: IQTableDecorDelegate? { set get }
 
         static func dequeue(tableView: UITableView) -> UITableViewHeaderFooterView?
 

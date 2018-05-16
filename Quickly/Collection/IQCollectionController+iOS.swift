@@ -6,7 +6,7 @@
 
     public protocol IQCollectionController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-        weak var collectionView: UICollectionView? { set get }
+        var collectionView: UICollectionView? { set get }
         var sections: [IQCollectionSection] { set get }
         var items: [IQCollectionItem] { get }
         var canMove: Bool { get }

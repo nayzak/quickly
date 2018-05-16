@@ -120,10 +120,6 @@ public func <<< < Type: IJsonValue & IQModel >(left: inout Type, right: QJson) t
     left = try Type.from(json: right) as! Type
 }
 
-public func <<< < Type: IJsonValue & IQModel >(left: inout Type!, right: QJson) throws {
-    left = try Type.from(json: right) as! Type
-}
-
 public func <<< < Type: IJsonValue & IQModel >(left: inout Type?, right: QJson) {
     if let model: IQModel? = try? Type.from(json: right) {
         left = model as? Type

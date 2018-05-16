@@ -9,7 +9,7 @@
 
     public protocol IQTableCell: IQTableReuse {
 
-        weak var tableDelegate: IQTableCellDelegate? { set get }
+        var tableDelegate: IQTableCellDelegate? { set get }
 
         static func dequeue(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell?
 

@@ -17,7 +17,7 @@
         public private(set) lazy var tabBarController: QTabBarController = self.prepareTabBarController()
         public var routers: [IQViewControllerRouter] = [] {
             didSet {
-                self.tabBarController.viewControllers = self.routers.flatMap({ (router: IQViewControllerRouter) -> UIViewController? in
+                self.tabBarController.viewControllers = self.routers.compactMap({ (router: IQViewControllerRouter) -> UIViewController? in
                     return router.viewController
                 })
                 if self.routers.count > 0 {

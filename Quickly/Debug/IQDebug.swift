@@ -92,28 +92,6 @@ extension Optional: IQDebug {
 
 }
 
-extension ImplicitlyUnwrappedOptional: IQDebug {
-
-    public func debugString(_ buffer: inout String, _ headerIndent: Int, _ indent: Int, _ footerIndent: Int) {
-        switch self {
-        case .none:
-            if headerIndent > 0 {
-                buffer.append(String(repeating: "\t", count: headerIndent))
-            }
-            buffer.append("nil")
-            break
-        case .some(let value):
-            if let debugValue: IQDebug = value as? IQDebug {
-                debugValue.debugString(&buffer, 0, indent, footerIndent)
-            } else {
-                buffer.append("\(value)")
-            }
-            break
-        }
-    }
-
-}
-
 extension Bool: IQDebug {
 
     public func debugString(_ buffer: inout String, _ headerIndent: Int, _ indent: Int, _ footerIndent: Int) {

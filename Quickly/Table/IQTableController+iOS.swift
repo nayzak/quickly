@@ -6,7 +6,7 @@
 
     public protocol IQTableController: UITableViewDataSource, UITableViewDelegate {
 
-        weak var tableView: UITableView? { set get }
+        var tableView: UITableView? { set get }
         var sections: [IQTableSection] { set get }
         var rows: [IQTableRow] { get }
         var canEdit: Bool { get }
